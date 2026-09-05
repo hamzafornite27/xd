@@ -1,15 +1,8 @@
 /**
- * Contenido narrativo de la experiencia.
- * Cero lógica aquí: solo texto y metadatos.
- *
- * `at`        marca en qué punto del scroll (0-1) empieza a ser la escena activa.
- * `image`     ruta a una foto en /public (opcional). Si no existe o no carga
- *             todavía, se muestra un marcador elegante en su lugar.
- * `alt`       texto alternativo de la foto. Edítalo para que describa la
- *             imagen real una vez la añadas (no debe limitarse a repetir la cita).
- * `title`     símbolo o frase grande (opcional).
- * `signature` línea pequeña destacada debajo del texto (opcional).
+ * La historia vive aquí: tiempos, textos y recuerdos.
+ * Las fotos se sirven desde /public/images/ y se consumen como /images/...
  */
+
 export const STORY = [
   {
     id: "intro",
@@ -20,75 +13,73 @@ export const STORY = [
   },
   {
     id: "something",
-    at: 0.06,
+    at: 0.055,
     whisper: "porque tengo algo que decirte",
     title: "No hace falta una llamada.",
     text: "A veces no se puede. Estamos ocupados, hay silencio, hay distancia. Pasa.",
   },
   {
     id: "unchanged",
-    at: 0.12,
+    at: 0.11,
     whisper: "y aun así",
     title: "Nada de eso cambia lo que siento.",
     text: "Eso sigue ahí, aunque el teléfono no suene.",
   },
 
-  // ---- Recuerdos ----
-  // Sustituye "image" por tu propia foto en /public/images/ (ver README).
+  // Pasillo de recuerdos
   {
     id: "memory-1",
-    at: 0.2,
-    image: "/images/recuerdo-1.jpg",
-    alt: "Foto del primer recuerdo — edita esta descripción al añadir tu imagen",
+    at: 0.19,
+    image: "/images/imagen1.jpg",
+    alt: "Primer recuerdo con Luna",
     text: "Quizá aquí todavía no sabíamos\ntodo lo que iba a pasar.",
   },
   {
     id: "memory-2",
-    at: 0.28,
-    image: "/images/recuerdo-2.jpg",
-    alt: "Foto del segundo recuerdo — edita esta descripción al añadir tu imagen",
+    at: 0.275,
+    image: "/images/imagen2.jpg",
+    alt: "Segundo recuerdo con Luna",
     text: "Después llegaron esos días\nque empezaron a sentirse\ndemasiado especiales.",
   },
   {
     id: "memory-3",
     at: 0.36,
-    image: "/images/recuerdo-3.jpg",
-    alt: "Foto del tercer recuerdo — edita esta descripción al añadir tu imagen",
+    image: "/images/imagen3.jpg",
+    alt: "Tercer recuerdo con Luna",
     text: "Este recuerdo me hace sonreír\ncada vez que lo veo.",
   },
   {
     id: "memory-4",
-    at: 0.44,
-    image: "/images/recuerdo-4.jpg",
-    alt: "Foto del cuarto recuerdo — edita esta descripción al añadir tu imagen",
+    at: 0.445,
+    image: "/images/imagen4.jpg",
+    alt: "Cuarto recuerdo con Luna",
     text: "Y poco a poco,\nLuna dejó de ser simplemente\nalguien con quien hablaba.",
   },
   {
     id: "memory-5",
-    at: 0.52,
-    image: "/images/recuerdo-5.jpg",
-    alt: "Foto del quinto recuerdo — edita esta descripción al añadir tu imagen",
+    at: 0.53,
+    image: "/images/imagen5.jpg",
+    alt: "Quinto recuerdo con Luna",
     text: "Se convirtió en alguien\na quien quería tener cerca.",
   },
   {
     id: "memory-closing",
-    at: 0.6,
+    at: 0.61,
     title: "♥",
     text: "Y ese es mi recuerdo favorito.",
     signature: "Luna.",
   },
-  // ---- Fin recuerdos ----
 
   {
     id: "question",
-    at: 0.68,
+    at: 0.69,
     whisper: "así que tengo una pregunta",
     title: "¿Cuánto crees que te quiero?",
     text: "Sigue bajando. Vamos a intentar medirlo.",
   },
   {
     id: "measuring",
-    at: 0.76,
+    at: 0.765,
     whisper: "calculando",
     title: "Midiendo…",
     text: "Esto va a tardar un segundo. O toda la vida, según se mire.",
@@ -102,7 +93,7 @@ export const STORY = [
   },
   {
     id: "infinity",
-    at: 0.9,
+    at: 0.91,
     whisper: "así que lo dejamos así",
     title: "∞",
     text: "Hay cosas que simplemente no caben en un porcentaje.",

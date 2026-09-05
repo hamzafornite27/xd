@@ -1,18 +1,15 @@
-Pon aquí vuestras 5 fotos con estos nombres exactos:
+FOTOS DE LA SORPRESA
 
-  recuerdo-1.jpg
-  recuerdo-2.jpg
-  recuerdo-3.jpg
-  recuerdo-4.jpg
-  recuerdo-5.jpg
+Pon aquí tus cinco fotos con estos nombres exactos:
 
-(pueden ser .jpg, .png o .webp — si usas otra extensión,
-cambia también la ruta correspondiente en src/data/story.js)
+imagen1.jpg
+imagen2.jpg
+imagen3.jpg
+imagen4.jpg
+imagen5.jpg
 
-Mientras no estén, la web sigue funcionando perfectamente:
-en su lugar se ve un marcador elegante que dice "añade tu
-foto en /images/recuerdo-N.jpg", así que nunca verás un
-icono de imagen rota.
+No tienes que tocar el código para que se detecten.
+También puedes usar PNG/WebP cambiando las rutas correspondientes en:
+src/data/story.js
 
-Este archivo (LEEME.txt) no afecta a la web, es solo una nota.
-Puedes borrarlo cuando quieras.
+Recomendación: fotos verticales (aprox. 4:5) para que el pasillo se vea bonito.

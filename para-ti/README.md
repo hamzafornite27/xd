@@ -6,12 +6,12 @@ innecesarias.
 
 ## Añadir vuestras fotos (sección de recuerdos)
 
-La experiencia incluye 5 escenas de recuerdos con foto + frase, definidas en
-`src/data/story.js`. Para ponerlas:
+La experiencia incluye 5 escenas de recuerdos con foto + frase y un pasillo visual
+conectado por flechas, definido en `src/data/story.js`. Para ponerlas:
 
 1. Copia tus 5 fotos a `public/images/` con estos nombres exactos:
-   `recuerdo-1.jpg`, `recuerdo-2.jpg`, `recuerdo-3.jpg`, `recuerdo-4.jpg`,
-   `recuerdo-5.jpg`.
+   `imagen1.jpg`, `imagen2.jpg`, `imagen3.jpg`, `imagen4.jpg`,
+   `imagen5.jpg`.
 2. Si usas `.png` o `.webp` en vez de `.jpg`, actualiza la ruta `image` de
    cada escena correspondiente en `src/data/story.js`.
 3. Edita también el campo `alt` de cada escena para que describa la foto real
@@ -104,8 +104,7 @@ Esto genera la carpeta `dist/`.
 
 1. Sube el repositorio (o arrastra la carpeta `dist/` a Netlify si prefieres
    un despliegue manual).
-2. Build command: `npm run build`
-3. Publish directory: `dist`
+2. El archivo `netlify.toml` ya deja configurados el comando y `dist` como publicación.
 
 No hace falta ninguna variable de entorno ni backend.
 
@@ -117,3 +116,24 @@ No hace falta ninguna variable de entorno ni backend.
   (el detalle técnico va a `console.error`, nunca al usuario).
 - `ready` / completado — la experiencia normal, incluida la revelación
   final al llegar al 100% del scroll.
+
+
+## Solución del estado de carga
+
+El Canvas se monta desde el principio mientras la experiencia está en estado
+`loading`. Antes, `HeartCanvas` estaba dentro del `v-else` de esa misma
+condición: por tanto nunca se montaba, nunca podía emitir `ready` y la app
+quedaba atrapada en `loading`.
+
+Ahora el Canvas puede inicializarse, emitir `ready` y retirar la pantalla de
+carga sin depender de una condición circular.
+
+## Pasillo de recuerdos
+
+Durante las cinco escenas de memoria aparece una mini línea de tiempo con
+`imagen1` → `imagen2` → `imagen3` → `imagen4` → `imagen5`. La imagen activa
+se destaca según el scroll y puede abrirse en un visor a pantalla completa.
+También se puede pasar al recuerdo anterior/siguiente con las flechas o con
+← → del teclado.
+
+No hace falta instalar ninguna librería adicional.

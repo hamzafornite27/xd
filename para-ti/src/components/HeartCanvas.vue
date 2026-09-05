@@ -57,7 +57,7 @@ const particleCount = computed(() => {
   if (props.reducedMotion) {
     return Math.min(220, Math.max(90, Math.floor(area / 14000)));
   }
-  return Math.min(650, Math.max(200, Math.floor(area / 4800)));
+  return Math.min(480, Math.max(160, Math.floor(area / 6200)));
 });
 
 function createParticles() {
@@ -179,7 +179,7 @@ function drawBackground() {
   ctx.fillRect(0, 0, width, height);
 }
 
-function drawParticles() {
+function drawParticles(time) {
   const visibility = lerp(0.2, 1, easeInOutCubic(props.progress));
   const warm = props.progress > 0.75;
 
@@ -187,7 +187,7 @@ function drawParticles() {
     const particle = particles[i];
     const twinkle = props.reducedMotion
       ? 1
-      : 0.75 + Math.sin(particle.phase + performance.now() * 0.001) * 0.25;
+      : 0.75 + Math.sin(particle.phase + time * 0.001) * 0.25;
 
     ctx.globalAlpha = particle.alpha * visibility * twinkle;
     ctx.fillStyle = warm ? "#ffb6d1" : "#e9d7e2";
@@ -208,7 +208,7 @@ function render(time) {
   ctx.clearRect(0, 0, width, height);
   drawBackground();
   updateParticles(delta);
-  drawParticles();
+  drawParticles(time);
 
   rafId = window.requestAnimationFrame(render);
 }
