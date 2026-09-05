@@ -1,0 +1,18 @@
+Pon aquí vuestras 5 fotos con estos nombres exactos:
+
+  recuerdo-1.jpg
+  recuerdo-2.jpg
+  recuerdo-3.jpg
+  recuerdo-4.jpg
+  recuerdo-5.jpg
+
+(pueden ser .jpg, .png o .webp — si usas otra extensión,
+cambia también la ruta correspondiente en src/data/story.js)
+
+Mientras no estén, la web sigue funcionando perfectamente:
+en su lugar se ve un marcador elegante que dice "añade tu
+foto en /images/recuerdo-N.jpg", así que nunca verás un
+icono de imagen rota.
+
+Este archivo (LEEME.txt) no afecta a la web, es solo una nota.
+Puedes borrarlo cuando quieras.
